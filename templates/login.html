@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <title>Вход</title>
+</head>
+<body>
+
+<center>
+    <block1>
+        <bl1>
+            <div class="container">
+                <div class="wrapper">
+                    <a href="/" class="backHome">Домой</a>
+                    <form method="post" class="formBlock">
+                        <div class="titleBlock">
+                            <h1 class="cardTitle">Вход</h1>
+                        </div>
+                        <div class="inputsBlock">
+                            <label class="labelText">
+                                Введите ваш Логин
+                                <input type="text" name="username" class="formInput" placeholder="Логин" required/>
+                            </label>
+                            <label class="labelText">
+                                Введите ваш пароль
+                                <input type="password" name="password" placeholder="Пароль" class="formInput" required>
+                            </label>
+                        </div>
+                        <input type="submit" name="Create" class="submitButton" value="Авторизоваться"/>
+                    </form>
+                </div>
+            </div>
+
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </bl1>
+    </block1>
+</center>
+
+</body>
+</html>

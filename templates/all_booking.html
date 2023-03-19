@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='allBooking.css') }}">
+
+    <title>Электронный каталог бронирований</title>
+</head>
+<style>
+    .container {
+        width: 530px;
+        overflow-y: auto;
+        max-height: 300px;
+    }
+</style>
+<body>
+
+<center>
+    <block1>
+        <form method="post">
+            <div class="titleBlock">
+                <h1 class="cardTitle">Все бронирования</h1>
+            </div>
+            <br>
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>ФИО</th>
+                        <th>Кол-во чел.</th>
+                        <th>Номер стола</th>
+                    </tr>
+                    {% for i in range(all_booking|length) %}
+                        <tr>
+                            <td>{{ all_booking[i][0] }}</td>
+                            <td>{{ all_booking[i][1] }}</td>
+                            <td>{{ all_booking[i][2] }}</td>
+                            <td>{{ all_booking[i][3] }}</td>
+                            <td>{{ all_booking[i][4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </form>
+    <a href="/" class="backHomeBooking">Домой</a>
+    </block1>
+</center>
+</body>
+
+</html>

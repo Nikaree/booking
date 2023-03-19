@@ -1,0 +1,42 @@
+.ui-datepicker-trigger {
+	margin-left: 5px;
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+}
+
+{
+  box-sizing: border-box;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.__select {
+  position: relative;
+  width: 210px;
+  height: 21px;
+  margin: 0 auto;
+
+  &[data-state="active"] {
+    .__select__title {
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+
+    .__select__content {
+      opacity: 1;
+    }
+
+    .__select__label + .__select__input + .__select__label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}

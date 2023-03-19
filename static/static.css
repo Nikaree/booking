@@ -1,0 +1,93 @@
+h1 {color :  #003767;;
+  text-transform: uppercase;
+  font-weight: 500;
+  }
+  body{
+      background-color: #fafafa; /* Цвет фона веб-страницы */
+     }
+  .flash {color:white;text-align:center;}
+  block1 {
+  fort-family: sans-serif;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background:  #ffffff;/*#34495e;*/
+  border: 1px solid #003767;
+  border-radius: 5px;
+  text-align: center;
+  }
+  bl1 {margin: 0px 100px 200px 50%;width: 300px;}
+  bl2 {margin: 0px 200px 0px 40%;width: 300px;}
+  bl3 {margin: 0px 200px 0px 50%;width: 300px;}
+  bl6 {margin: 0px 200px 0px 20%;width: 300px;}
+  bl4 {display: flex;width: 300px;}
+  bl5 {width: 400px; }
+  bl7 {margin: 0px 200px 0px 30%;width: 300px;}
+  input[type = "text"] {
+  width: 200px;}
+  p input[type = "text"], input[type= "password"]{
+  display: inline;
+  border: 0;
+  background:none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #003767; /*#ff0000;*/
+  padding: 14px 10px;
+  width: 500px;
+  border-radius: 24px;
+  transition: 0 25s;
+  color: white;
+  }
+  p input[type = "text"]:focus, input[type= "password"]:focus{
+   display: inline;
+   width: 280px;
+   border-color: #003767;/*#ff0000;*/
+  }
+  p input[type = "submit"]{
+    padding: 8px 35px;
+    background-color: #003767;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  hr:link {
+    color: #497DDD; ;
+    border-bottom: 1px dashed;
+  }
+  .backHome{
+      font-size: 24px;
+      line-height: 150%;
+      font-weight: 400;
+      color: #003767;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid #003767;
+      padding: 7px 25px;
+      border-radius: 5px;
+  }
+  hr:hover {
+    color:   #003767;
+    border-bottom: .07em solid;
+  }
+   a:hover{background: #ffffff;}
+   li {
+   float: left;
+   }
+  
+    ul.hr {
+      margin: 0; /* Обнуляем значение отступов */
+      padding: 0px; /* Значение полей */
+     }
+     ul.hr li {
+      display: inline; /* Отображать как строчный элемент */
+      margin-right: 0px; /* Отступ слева */
+      padding: 3px; /* Поля вокруг текста */
+     }
+  
+  

@@ -1,0 +1,95 @@
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  border-radius: 10px;
+  border-spacing: 0;
+  }
+  
+  th {
+  background:#003767;
+  color:#ffffff;;
+  padding: 10px 20px;
+  }
+  th, td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color:#003767;
+  }
+  th:first-child, td:first-child {
+  text-align: left;
+  }
+  th:first-child {
+  border-top-left-radius: 10px;
+  }
+  th:last-child {
+  border-top-right-radius: 10px;
+  border-right: none;
+  }
+  td {
+  padding: 10px 20px;
+  background: #ffffff;
+  }
+  tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+  }
+  tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+  }
+  tr td:last-child {
+  border-right: none;
+  }
+  .container {
+  width: 980px;
+  min-height: 500px;
+  }
+  block1 {
+  fort-family: sans-serif;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: #ffffff;
+  text-align: center;
+  border: 1px solid #003767;
+  border-radius: 5px;
+  }
+  bl7 {margin: 0px 200px 0px 30%;width: 300px;}
+  
+  p input[type = "text"], input[type= "password"]{
+  border: 0;
+  background:none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ff0000;
+  padding: 14px 10px;
+  width: 200px;
+  border-radius: 24px;
+  transition: 0 25s;
+  color: white;
+  }
+  p input[type = "text"]:focus, input[type= "password"]:focus{
+   width: 280px;
+   border-color: #ff0000;
+  }
+  p input[type = "submit"]{
+  color: white;
+  border: 0;
+  background:none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ff0000;
+  padding: 14px 40px;
+  border-radius: 24px;
+  transition: 0 25s;
+  cursor: pointer;
+  }
+  hr:link {
+    color: #497DDD; ;
+    border-bottom: 1px dashed;
+  }
+  hr:hover {
+    color: #154088;
+    border-bottom: .07em solid;
+  }

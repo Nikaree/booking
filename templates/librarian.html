@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bookingFormStyles.css') }}">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <title>Электронный каталог</title>
+</head>
+<style>
+</style>
+<body>
+
+
+<center>
+    <block1>
+        <bl7>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+
+            <div class="container">
+                <div class="wrapper">
+                    <a href="/" class="backHome">Домой</a>
+                    <form method="post" class="formBlock">
+                        <div class="titleBlock">
+                            <h1 class="cardTitle">Карточка бронирования</h1>
+                        </div>
+                        <div class="contentBlock">
+                            <div class="inputsBlock">
+                                <label class="labelText">
+                                    Введите ваше имя
+                                    <input type="text" name="fio" class="formInput" placeholder="Фамилия И. О."
+                                           maxlength="20"
+                                           required/>
+                                </label>
+                                <label class="labelText">
+                                    Введите ваш номер телефона
+                                    <input type="text" class="formInput phone" name="number_phone"
+                                           placeholder="Номер телефона" maxlength="12" required>
+                                </label>
+                                <script>
+                                    $(".phone").mask("+7(999)999-9999");
+                                </script>
+                            </div>
+                            <div class="labelsBlockLayout">
+                                <div class="checkTable">
+                                    <label class="labelText">
+                                        Выберете этаж для заказа
+                                        <select name="system_kat" class="__select selectComponent">
+                                            <option value="1" >Столик 1</option>
+                                            <option value="2">Столик 2</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <div class="checkTable">
+                                    <label class="labelText">
+                                        Выберете расположение столика
+                                    </label>
+                                    <div class="radioButtons">
+                                        <label for="window_yes"> У окна </label>
+                                        <input name="dva" type="radio" id="window_yes" value="yes" checked>
+                                    </div>
+                                    <div class="radioButtons">
+                                        <label for="window_no"> Не у окна </label>
+                                        <input name="dva" type="radio" id="window_no" value="no">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btnBlock">
+                                <label class="labelText">
+                                    Выберете время
+                                    <select name="time" class="selectComponent">
+                                        <option value="">Время</option>
+                                        {% for i in time %}
+                                            <option value={{ i }}>{{ i }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </label>
+                                <label class="labelText">
+                                    Введите количество человек
+                                    <input type="text" name="desc_amount" class="formInput" placeholder="Кол-во человек" required/>
+                                </label>
+                            </div>
+                            <input type="submit" name="Create" class="submitButton" value="Забронировать"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </bl7>
+    </block1>
+</center>
+</body>
+</html>

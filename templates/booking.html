@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='option.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+/* Локализация datepicker */
+$.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'dd.mm.yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
+</script>
+    <title>Заголовок</title>
+</head>
+<body>
+
+<center>
+<block1>
+    <bl1>
+<form  method="post">
+      <h1>Заголовок</h1>
+    <a href="/" class="backHome">Домой</a>
+      <div id="datepicker"></div>
+      <input type="hidden" id="datepicker_value" name ='val' value="16.01.2023">
+      <p><input type="submit" value="Выбрать" name = 'entrance'/></p>
+<script>
+var dates = {{ data.date|tojson }};
+$(function(){
+	$("#datepicker").datepicker({
+	    minDate: 0,
+		beforeShowDay: function(date){
+			var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+			return [dates.indexOf(string) == -1]
+		}
+	});
+});
+</script>
+</form>
+
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+{% endfor %}
+        </bl1>
+</block1>
+</center>
+
+</body>
+</html>
